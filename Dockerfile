@@ -9,8 +9,6 @@ ENV PROJECT_FOLDER=/app/
 
 COPY app/ /app/
 
-RUN go build
-
 #No alpine, não temos o comando groupadd, mas sim o addgroup
 #O comando adduser também não existe no alpine, mas sim o adduser,
 # recebendo o parâmetro -S (user sem senha) e -G (grupo do usuário)
