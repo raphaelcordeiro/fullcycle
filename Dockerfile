@@ -9,8 +9,7 @@ RUN apk update --no-cache && \
     apk add --no-cache upx
 
 RUN CGO_ENABLED=0 go build -ldflags="-s -w" -o main main.go && \
-    upx --best --lzma main && \
-    ls -l /app  # Lista o conteúdo do diretório /app
+    upx --best --lzma main
 
 #Usando imagem scratch para reduzir tamanho da imagem
 FROM scratch
